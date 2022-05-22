@@ -6,7 +6,7 @@ namespace Flow
 {
     class Program
     {
-        async Task Method(object cancel, string textMethod)
+        async static Task Method(object cancel, string textMethod)
         {
             var token = (CancellationToken)cancel;
 
@@ -23,17 +23,34 @@ namespace Flow
         async static Task Main(string[] args)
         {
             ConsoleKeyInfo pressed;
+            object o = new object();
+            string s = new string("");
             pressed = Console.ReadKey(true);
+            var task1 = new Task(Method(o, s));
+            var task2 = new Task(Method(o, s));
+            var task3 = new Task(Method(o, s));
+            var task4 = new Task(Method(o, s));
+            var task5 = new Task(Method(o, s));
             while (pressed != null)
             {
                 var cancelTokSrc = new CancellationTokenSource();
 
-                Task task1 = await Task.Factory.StartNew(Method, cancelTokSrc.Token, "Первый пошел");
-                Task task2 = await Task.Factory.StartNew(Method, cancelTokSrc.Token, "Второй пошел");
-                Task task3 = await Task.Factory.StartNew(Method, cancelTokSrc.Token, "Третий пошел");
-                Task task4 = await Task.Factory.StartNew(Method, cancelTokSrc.Token, "Четвертый пошел");
-                Task task5 = await Task.Factory.StartNew(Method, cancelTokSrc.Token, "Пятый пошел");
-
+                await task1.Run(() => {
+                    Method(cancelTokSrc.Token, "Первый пошел");
+                });
+                await task2.Run(() => {
+                    Method(cancelTokSrc.Token, "Второй пошел");
+                });
+                await task3.Run(() => {
+                    Method(cancelTokSrc.Token, "Третий пошел");
+                });
+                await task4.Run(() => {
+                    Method(cancelTokSrc.Token, "Четвертый пошел");
+                });
+                await task5.Run(() => {
+                    Method(cancelTokSrc.Token, "Пятый пошел");
+                });
+                
                 try
                 {
                     cancelTokSrc.Cancel();
