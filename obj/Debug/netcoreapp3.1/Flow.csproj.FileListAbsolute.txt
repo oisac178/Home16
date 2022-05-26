@@ -1,0 +1,14 @@
+H:\Обучение\Csharp\Home16\Flow\bin\Debug\netcoreapp3.1\Flow.exe
+H:\Обучение\Csharp\Home16\Flow\bin\Debug\netcoreapp3.1\Flow.deps.json
+H:\Обучение\Csharp\Home16\Flow\bin\Debug\netcoreapp3.1\Flow.runtimeconfig.json
+H:\Обучение\Csharp\Home16\Flow\bin\Debug\netcoreapp3.1\Flow.runtimeconfig.dev.json
+H:\Обучение\Csharp\Home16\Flow\bin\Debug\netcoreapp3.1\Flow.dll
+H:\Обучение\Csharp\Home16\Flow\bin\Debug\netcoreapp3.1\Flow.pdb
+H:\Обучение\Csharp\Home16\Flow\obj\Debug\netcoreapp3.1\Flow.csproj.AssemblyReference.cache
+H:\Обучение\Csharp\Home16\Flow\obj\Debug\netcoreapp3.1\Flow.GeneratedMSBuildEditorConfig.editorconfig
+H:\Обучение\Csharp\Home16\Flow\obj\Debug\netcoreapp3.1\Flow.AssemblyInfoInputs.cache
+H:\Обучение\Csharp\Home16\Flow\obj\Debug\netcoreapp3.1\Flow.AssemblyInfo.cs
+H:\Обучение\Csharp\Home16\Flow\obj\Debug\netcoreapp3.1\Flow.csproj.CoreCompileInputs.cache
+H:\Обучение\Csharp\Home16\Flow\obj\Debug\netcoreapp3.1\Flow.dll
+H:\Обучение\Csharp\Home16\Flow\obj\Debug\netcoreapp3.1\Flow.pdb
+H:\Обучение\Csharp\Home16\Flow\obj\Debug\netcoreapp3.1\Flow.genruntimeconfig.cache
