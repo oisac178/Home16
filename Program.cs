@@ -20,8 +20,8 @@ namespace Flow
             }
             Random rand = new Random();
             int y = rand.Next(100, 2000);
-            Console.WriteLine($"{textMethod} {y}");
-            for (int i = 1; i < 20; i++)
+            Console.WriteLine($"{textMethod} {Task.CurrentId}");
+            for (int i = 1; i < 15; i++)
             {
                 j *= i;
                 await Task.Delay(y);
@@ -32,34 +32,29 @@ namespace Flow
         async static Task Main(string[] args)
         {
             Console.WriteLine("ESC - выход");
-            
+
             var cancelTokSrc = new CancellationTokenSource();
-            while (Console.ReadKey().Key != ConsoleKey.Escape)
-            {
-                Console.WriteLine("bu");
-                await Task.Run(() =>
+            await Task.Run(() =>
                 {
                     Method(cancelTokSrc.Token, "Первый пошел");
                 });
-                await Task.Run(() =>
-                {
-                    Method(cancelTokSrc.Token, "Второй пошел");
-                });
-                await Task.Run(() =>
-                {
-                    Method(cancelTokSrc.Token, "Третий пошел");
-                });
-                await Task.Run(() =>
-                {
-                    Method(cancelTokSrc.Token, "Четвертый пошел");
-                });
-                await Task.Run(() =>
-                {
-                    Method(cancelTokSrc.Token, "Пятый пошел");
-                });                
-            }
-            exit = true;
-            while (exit)
+            await Task.Run(() =>
+            {
+                Method(cancelTokSrc.Token, "Второй пошел");
+            });
+            await Task.Run(() =>
+            {
+                Method(cancelTokSrc.Token, "Третий пошел");
+            });
+            await Task.Run(() =>
+            {
+                Method(cancelTokSrc.Token, "Четвертый пошел");
+            });
+            await Task.Run(() =>
+            {
+                Method(cancelTokSrc.Token, "Пятый пошел");
+            });
+            while (Console.ReadKey().Key != ConsoleKey.Escape)
             {
                 try
                 {
